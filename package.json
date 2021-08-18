@@ -32,6 +32,7 @@
     "@babel/standalone": "^7.15.3",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "ansi-keycode": "^0.0.0",
+    "classnames": "^2.3.1",
     "fix-path": "^3.0.0",
     "merge-options": "^3.0.4",
     "monaco-editor": "^0.26.1",
