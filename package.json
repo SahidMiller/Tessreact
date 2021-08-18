@@ -16,6 +16,11 @@
     "repl",
     "cli"
   ],
+  "exports": {
+    ".": "./src/App.js",
+    "./assets/*": "./assets/*",
+    "./reducer": "./src/store/reducers/index.js"
+  },
   "author": {
     "name": "Sahid Miller",
     "email": "sahid.miller@gmail.com"
