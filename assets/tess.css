@@ -1,0 +1,267 @@
+:root {
+  --opacity: 1;
+  --background: rgba(0, 0, 0, 0);
+  --background-image: var(--background);
+  --blur: blur(0px);
+
+  --general-text-color: #fff;
+
+  --tab-panel-background: #000;
+  --tab-active-background: #fff;
+  --tab-inactive-background: #000;
+  --tab-hover: rgb(36, 36, 36);
+
+  --tab-text-color: #000;
+  --tab-text-size: 13px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--background-image);
+  background-size: cover;
+  color: var(--general-text-color);
+  backdrop-filter: var(--blur);
+}
+
+.multiterminal.tabs {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  -webkit-app-region: drag;
+}
+
+.multiterminal.tabs * {
+  user-select: none;
+}
+
+.multiterminal .tab {
+  max-width: 16rem;
+  min-width: 11.5rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  font-family: monospace;
+  cursor: pointer;
+  animation: 375ms nodeInserted;
+  -webkit-app-region: no-drag;
+  color: var(--tab-text-color);
+  transition: background 75ms linear;
+}
+
+.multiterminal .tab:hover {
+  background: var(--tab-hover);
+}
+
+.multiterminal .more {
+  height: 100%;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+  font-family: monospace;
+  order: 1000;
+  -webkit-app-region: no-drag;
+  color: var(--general-text-color);
+  transition: flex 1000ms linear;
+}
+
+.multiterminal .more:hover {
+  cursor: pointer;
+  filter: brightness(1.15);
+}
+
+.multiterminal .close-button {
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  margin-right: 7px;
+  border-radius: 4px;
+  transition: all 100ms linear;
+}
+
+.multiterminal .tab:hover .close-button {
+  visibility: visible;
+}
+
+.multiterminal .close-button:hover {
+  cursor: pointer;
+  background: var(--tab-panel-background);
+}
+
+.multiterminal.tabs .tabs-panel {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  /* padding-left: 8px; */
+  background: var(--tab-panel-background);
+}
+
+.multiterminal .app-buttons {
+  height: 100%;
+  width: auto;
+  display: flex;
+  overflow: hidden;
+  flex-direction: row-reverse;
+  -webkit-app-region: no-drag;
+}
+
+.multiterminal .app-button {
+  height: 100%;
+  width: 54px;
+  -webkit-app-region: no-drag;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-no-opacity);
+}
+
+.multiterminal .app-button:hover {
+  filter: invert(0.1);
+}
+
+.multiterminal .app-button#close:hover {
+  background: rgba(255, 0, 0, 0.229);
+}
+
+.multiterminal .app-button#screen-size:hover {
+  background: rgb(192 192 192 / 0.229);
+}
+
+.multiterminal .app-button#separator {
+  -webkit-app-region: drag;
+}
+
+.multiterminal .app-button#separator:hover {
+  filter: invert(0);
+}
+
+.multiterminal .tab .tab-link {
+  width: 100%;
+  max-width: 14rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: var(--tab-text-size);
+}
+
+.multiterminal .terminals {
+  height: calc(100vh - 30px);
+  width: 100%;
+  position: relative;
+}
+
+.multiterminal .terms {
+  position: absolute;
+  height: calc(100% - 3px);
+  width: calc(100% - 3px);
+  margin-left: 3px;
+  margin-top: 3px;
+}
+
+.multiterminal .iframe {
+  position: absolute;
+  height: calc(100% + 3px);
+  width: 100%;
+  transform: translate(-3px, -3px);
+}
+
+.multiterminal .hidden {
+  z-index: 50;
+  visibility: hidden;
+}
+
+.multiterminal .visible {
+  z-index: 10000;
+}
+
+.multiterminal .logo {
+  height: auto;
+  max-height: 75%;
+  border-radius: 4px;
+  margin-left: 7px;
+  user-select: none !important;
+}
+
+.multiterminal .tabs-tab {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: overlay;
+}
+
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 212, 212, 0.14);
+  border-radius: 6px;
+}
+
+@keyframes nodeInserted {
+  from {
+    opacity: 0.25;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.multiterminal .invisible {
+  scale: 0;
+}
+
+.multiterminal .terminals-before {
+  height: calc(100% - 30px);
+  width: 100%;
+  position: relative;
+  background: var(--background);
+}
+
+.multiterminal .tab-active {
+  background: var(--tab-active-background) !important;
+}
+
+.multiterminal .tab-inactive {
+  background: var(--tab-inactive-background);
+}
+
+.multiterminal .tab-active > .close-button {
+  visibility: visible;
+}
+
+.multiterminal iframe {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.multiterminal svg {
+  height: 12px;
+  width: 12px;
+}
+
+.multiterminal .overAll {
+  z-index: 100000;
+}
+
+.multiterminal .end-order {
+  order: 100000;
+}
