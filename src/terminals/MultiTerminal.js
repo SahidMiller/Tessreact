@@ -11,7 +11,7 @@ const code = `
   };
   render(<App />);`;
 
-import { colors } from "./util.js";
+import colors from "./theme/color.js";
 
 export default function MultiTerminal({ terminals = [], openEditor = false }) {
   let defaultActiveIndex = terminals.findIndex((t) => t.active);

@@ -19,43 +19,57 @@ import MultiTerminal from "./terminals/MultiTerminal.js";
 const importPathFunctions = require("./lib/importPath");
 import "../assets/reactide.css";
 import "../assets/reactide-new.css";
+import mergeOptions from "merge-options";
+const mergeOptsIgnoreUndefined = mergeOptions.bind({ ignoreUndefined: true });
+
+const defaultState = {
+  openTabs: {},
+  previousPaths: [],
+  openedProjectPath: "",
+  openMenuId: null,
+  createMenuInfo: {
+    id: null,
+    type: null,
+  },
+  fileTree: null,
+  watch: null,
+  rootDirPath: "",
+  selectedItem: {
+    id: null,
+    path: "",
+    type: null,
+    focused: false,
+  },
+  renameFlag: false,
+  fileChangeType: null,
+  deletePromptOpen: false,
+  newName: "",
+  componentTreeObj: null,
+  simulator: false,
+  url: "",
+  cra: false,
+  craOut: "",
+  outputOrTerminal: "output",
+  liveServerPID: null,
+  closed: false,
+  toggleTerminal: false,
+};
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.editor = createRef();
-    this.state = {
-      openTabs: {},
-      previousPaths: [],
-      openedProjectPath: "",
-      openMenuId: null,
-      createMenuInfo: {
-        id: null,
-        type: null,
-      },
-      fileTree: null,
-      watch: null,
-      rootDirPath: "",
-      selectedItem: {
-        id: null,
-        path: "",
-        type: null,
-        focused: false,
-      },
-      renameFlag: false,
-      fileChangeType: null,
-      deletePromptOpen: false,
-      newName: "",
-      componentTreeObj: null,
-      simulator: false,
-      url: "",
-      cra: false,
-      craOut: "",
-      outputOrTerminal: "output",
-      liveServerPID: null,
-      closed: false,
-      toggleTerminal: false,
-    };
+
+    const mergeOptionsFn = props.honorUndefined
+      ? mergeOptions
+      : mergeOptsIgnoreUndefined;
+    //Copy only props with keys defined in defaultState to avoid copying too much to state
+    const stateProps = Object.keys(defaultState).reduce((stateProps, key) => {
+      stateProps[key] = props[key];
+      return stateProps;
+    }, {});
+
+    this.state = mergeOptionsFn(defaultState, stateProps);
 
     this.fileTreeInit();
     this.props = props;

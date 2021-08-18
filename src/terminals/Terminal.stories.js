@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import Terminal from "./Terminal";
-import createConsoleInterface from "./createConsoleInterface";
+import createConsoleInterface from "./interfaces/createConsoleInterface";
 
 export default {
   title: "Tess/Terminals",
