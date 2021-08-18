@@ -1,4 +1,4 @@
-import { h, Component } from "preact";
+import { h, Component } from "react";
 
 class InWindowSimulator extends Component {
   constructor(props) {

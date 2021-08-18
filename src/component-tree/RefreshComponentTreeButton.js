@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { h } from "react";
 
 //declared a function named handleRefreshButtonClick
 //takes in 2x arguments

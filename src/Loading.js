@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { h } from "react";
 
 import "../assets/loading.css";
 import logoUrl from "../assets/logo.svg";

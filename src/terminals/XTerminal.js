@@ -1,4 +1,4 @@
-import { h, Component } from "preact";
+import { h, Component } from "react";
 import { Terminal } from "xterm";
 const className = require("classnames");
 

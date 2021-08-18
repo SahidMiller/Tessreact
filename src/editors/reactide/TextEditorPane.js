@@ -1,5 +1,5 @@
-import { h, Fragment } from "preact";
-import { forwardRef } from "preact/compat";
+import { h, Fragment } from "react";
+import { forwardRef } from "react";
 import TextEditor from "./TextEditor";
 import PropTypes from "prop-types";
 

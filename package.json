@@ -20,22 +20,20 @@
     "name": "Sahid Miller",
     "email": "sahid.miller@gmail.com"
   },
+  "exports": {
+    ".": "./src/App.js",
+    "./assets/*": "./assets/*",
+    "./reducer": "./src/store/reducers/index.js"
+  },
   "license": "ISC",
   "dependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.14.9",
-    "@babel/preset-env": "^7.15.0",
-    "@babel/standalone": "^7.15.3",
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "ansi-keycode": "^0.0.0",
     "fix-path": "^3.0.0",
     "merge-options": "^3.0.4",
     "monaco-editor": "^0.26.1",
-    "node-polyfill-webpack-plugin": "^1.1.4",
     "node-stackify": "https://github.com/SahidMiller/node-stackify",
     "path": "^0.12.7",
-    "preact": "^10.5.14",
     "prism-react-renderer": "^1.2.1",
-    "react-redux": "^7.2.4",
     "react-simple-code-editor": "^0.11.0",
     "redux": "^4.1.1",
     "webpack-merge": "^5.8.0",
@@ -43,9 +41,15 @@
     "xterm-addon-fit": "^0.5.0",
     "xterm-addon-web-links": "^0.4.0"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/standalone": "^7.15.3",
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
@@ -54,11 +58,13 @@
     "@storybook/preact": "^6.3.7",
     "babel-loader": "^8.2.2",
     "core-js": "^3.16.1",
+    "node-polyfill-webpack-plugin": "^1.1.4",
+    "preact": "^10.5.14",
     "process": "^0.11.10",
+    "react-redux": "^7.2.4",
     "virtualfs": "^2.2.0"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006 -s ./src"
   }
 }

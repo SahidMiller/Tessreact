@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { h } from "react";
 
 function handleRefreshButtonClick(event, refreshFileDirectory) {
   event.stopPropagation();

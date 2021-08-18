@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { h } from "react";
 import CoreApp from "./App.js";
 
 import reducer from "./store/reducers";

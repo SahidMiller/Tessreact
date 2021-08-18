@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { h } from "react";
 import RenameForm from "./RenameForm";
 import PropTypes from "prop-types";
 import CreateMenu from "./CreateMenu";

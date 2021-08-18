@@ -1,4 +1,4 @@
-import { h, Fragment, Component } from "preact";
+import { h, Fragment, Component } from "react";
 import { default as CoreFileTree } from "./FileTree";
 import RefreshFileDirectory from "./RefreshFileDirectory";
 

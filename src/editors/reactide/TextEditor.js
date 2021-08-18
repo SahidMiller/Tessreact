@@ -1,5 +1,5 @@
-import { h } from "preact";
-import { forwardRef, PureComponent } from "preact/compat";
+import { h } from "react";
+import { forwardRef, PureComponent } from "react";
 import * as monaco from "monaco-editor";
 import PropTypes from "prop-types";
 //import { StaticServices } from 'monaco-editor/esm/vs/editor/standalone/browser/standaloneServices';

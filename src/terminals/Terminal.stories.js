@@ -1,5 +1,5 @@
 /** @jsx h */
-import { h } from "preact";
+import { h } from "react";
 import Terminal from "./Terminal";
 import createConsoleInterface from "./interfaces/createConsoleInterface";
 

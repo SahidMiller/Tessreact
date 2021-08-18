@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { h } from "react";
 import PropTypes from "prop-types";
 
 const DeletePrompt = ({ deletePromptHandler, name }) => {

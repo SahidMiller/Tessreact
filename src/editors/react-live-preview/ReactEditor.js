@@ -1,4 +1,4 @@
-import { h, Fragment } from "preact";
+import { h, Fragment } from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import CodeEditor from "react-simple-code-editor";
 

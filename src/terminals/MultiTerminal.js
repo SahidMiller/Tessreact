@@ -1,8 +1,7 @@
-import { h, Fragment } from "preact";
-import { useEffect, useRef, useState } from "preact/hooks";
+import { h, Fragment } from "react";
+import { useEffect, useRef, useState } from "react";
 import Terminal from "./Terminal.js";
 import Editor from "../editors/react-live-preview/index.js";
-import "../../assets/tess.css";
 
 const code = `
   function App() {

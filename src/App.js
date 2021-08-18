@@ -1,4 +1,4 @@
-import { h, Fragment, Component, createRef } from "preact";
+import { h, Fragment, Component, createRef } from "react";
 
 const EventEmitter = require("events");
 const ipcRenderer = new EventEmitter();

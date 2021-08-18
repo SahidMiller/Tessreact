@@ -1,5 +1,5 @@
-import { h, Fragment } from "preact";
-import { PureComponent } from "preact/compat";
+import { h, Fragment } from "react";
+import { PureComponent } from "react";
 
 class MockComponentTree extends PureComponent {
   constructor(props) {

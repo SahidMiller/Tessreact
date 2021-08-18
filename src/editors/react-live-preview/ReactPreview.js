@@ -1,4 +1,4 @@
-import { h, Fragment, Component, render } from "preact";
+import { h, Fragment, Component, render } from "react";
 import {
   useEffect,
   useContext,
@@ -7,7 +7,7 @@ import {
   useReducer,
   useMemo,
   useCallback,
-} from "preact/hooks";
+} from "react";
 
 export function createRenderer(
   mountSelector = `[data-react-preview-editor="preview"]`

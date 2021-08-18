@@ -1,5 +1,5 @@
-import { h, Fragment } from "preact";
-import { useState, useEffect } from "preact/hooks";
+import { h, Fragment } from "react";
+import { useState, useEffect } from "react";
 import { Preview } from "./ReactPreview.js";
 import { Editor } from "./ReactEditor.js";
 

@@ -1,5 +1,5 @@
-import { h } from "preact";
-import { useEffect, useRef, useState } from "preact/hooks";
+import { h } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Stream from "stream";
 
@@ -10,10 +10,6 @@ import { FitAddon } from "xterm-addon-fit";
 import defaultColors from "./theme/color.js";
 import defaultConfig from "./theme/config.js";
 import mergeOptions from "merge-options";
-
-import "xterm/css/xterm.css";
-import "../../assets/tess.css";
-import "@fortawesome/fontawesome-free/css/all.css";
 
 function resize(fitAddon, terminal, duplex) {
   try {

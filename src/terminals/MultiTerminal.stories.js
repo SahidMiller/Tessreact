@@ -1,5 +1,5 @@
 /** @jsx h */
-import { h } from "preact";
+import { h } from "react";
 import { default as CoreMultiTerminal } from "./MultiTerminal";
 import createConsoleInterface from "./interfaces/createConsoleInterface";
 
